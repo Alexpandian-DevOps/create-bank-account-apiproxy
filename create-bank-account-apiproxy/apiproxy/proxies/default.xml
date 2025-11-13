@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>Default Proxy Endpoint</Description>
+    <FaultRules>
+        <FaultRule name="InvalidApiKey">
+            <Step>
+                <Name>AssignMessage-ErrorResponse</Name>
+            </Step>
+            <Condition>(fault.name = "FailedToResolveAPIKey") or (fault.name = "InvalidApiKey")</Condition>
+        </FaultRule>
+    </FaultRules>
+    <DefaultFaultRule name="all">
+        <Step>
+            <Name>AssignMessage-ErrorResponse</Name>
+        </Step>
+        <AlwaysEnforce>true</AlwaysEnforce>
+    </DefaultFaultRule>
+    <PreFlow name="PreFlow">
+        <Request>
+            <!-- Use Shared Flow for common security policies -->
+            <Step>
+                <Name>FlowCallout.common-security-flow</Name>
+            </Step>
+            <!-- Alternative: Individual policies (comment out if using shared flow) -->
+            <!--
+            <Step>
+                <Name>VerifyAPIKey</Name>
+            </Step>
+            <Step>
+                <Name>ValidateRequest</Name>
+            </Step>
+            -->
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="CreateAccount">
+            <Description>Create a new bank account - Mock Response</Description>
+            <Request/>
+            <Response>
+                <Step>
+                    <Name>AssignMessage-MockResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/accounts") and (request.verb = "POST")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/v1/banking</BasePath>
+        <Properties/>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

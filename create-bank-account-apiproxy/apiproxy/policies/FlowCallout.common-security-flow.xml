@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FlowCallout async="false" continueOnError="false" enabled="true" name="FlowCallout.common-security-flow">
+    <DisplayName>Call Common Security Shared Flow</DisplayName>
+    <Parameters/>
+    <SharedFlowBundle>common-security-flow</SharedFlowBundle>
+</FlowCallout>

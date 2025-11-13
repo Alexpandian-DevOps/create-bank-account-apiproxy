@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="create-bank-account">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1699704000000</CreatedAt>
+    <CreatedBy>developer</CreatedBy>
+    <Description>API Proxy for creating new bank accounts</Description>
+    <DisplayName>Create Bank Account API</DisplayName>
+    <LastModifiedAt>1699704000000</LastModifiedAt>
+    <LastModifiedBy>developer</LastModifiedBy>
+    <Policies>
+        <Policy>FlowCallout.common-security-flow</Policy>
+        <Policy>VerifyAPIKey</Policy>
+        <Policy>ValidateRequest</Policy>
+        <Policy>KVM-GetSecrets</Policy>
+        <Policy>AssignMessage-SetBackendRequest</Policy>
+        <Policy>AssignMessage-MockResponse</Policy>
+        <Policy>AssignMessage-SuccessResponse</Policy>
+        <Policy>AssignMessage-ErrorResponse</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

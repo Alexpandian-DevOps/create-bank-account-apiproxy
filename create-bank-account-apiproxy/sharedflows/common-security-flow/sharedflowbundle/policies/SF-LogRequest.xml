@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MessageLogging async="true" continueOnError="true" enabled="true" name="SF-LogRequest">
+    <DisplayName>Shared Flow - Log Request</DisplayName>
+    <Properties/>
+    <Syslog>
+        <Message>[{organization.name}] [{environment.name}] [{apiproxy.name}] Method: {request.verb}, Path: {request.path}, Client IP: {client.ip}, Status: {message.status.code}</Message>
+        <Host>logs.example.com</Host>
+        <Port>514</Port>
+        <Protocol>TCP</Protocol>
+    </Syslog>
+</MessageLogging>

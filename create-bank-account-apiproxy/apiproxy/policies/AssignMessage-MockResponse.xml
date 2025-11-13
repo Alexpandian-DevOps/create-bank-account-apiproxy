@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AssignMessage-MockResponse">
+    <DisplayName>Mock Response - No Backend</DisplayName>
+    <Properties/>
+    <Set>
+        <Headers>
+            <Header name="Content-Type">application/json</Header>
+        </Headers>
+        <Payload contentType="application/json">
+{
+    "accountNumber": "ACC{randomLong}",
+    "accountType": "{request.content.accountType}",
+    "customerName": "{request.content.customerName}",
+    "customerId": "{request.content.customerId}",
+    "balance": {request.content.initialDeposit},
+    "currency": "{request.content.currency}",
+    "branchCode": "{request.content.branchCode}",
+    "status": "ACTIVE",
+    "createdAt": "{system.timestamp}",
+    "requestId": "{messageid}",
+    "message": "Mock response - Account created successfully (no actual backend)"
+}
+        </Payload>
+        <StatusCode>201</StatusCode>
+        <ReasonPhrase>Created</ReasonPhrase>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>

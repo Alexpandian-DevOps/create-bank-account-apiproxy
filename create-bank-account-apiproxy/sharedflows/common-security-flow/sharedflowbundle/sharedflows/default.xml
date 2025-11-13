@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlow name="default">
+    <Description>Common security and validation flow</Description>
+    <Step>
+        <Name>SF-SpikeArrest</Name>
+    </Step>
+    <Step>
+        <Name>SF-GetKVMConfig</Name>
+    </Step>
+    <Step>
+        <Name>SF-VerifyAPIKey</Name>
+        <Condition>kvm.config.api_key_enabled = "true"</Condition>
+    </Step>
+    <Step>
+        <Name>SF-JSONThreatProtection</Name>
+        <Condition>request.header.content-type ~ "application/json"</Condition>
+    </Step>
+    <Step>
+        <Name>SF-Quota</Name>
+        <Condition>kvm.config.quota_enabled = "true"</Condition>
+    </Step>
+    <Step>
+        <Name>SF-CORS</Name>
+    </Step>
+    <Step>
+        <Name>SF-RemoveHeaders</Name>
+    </Step>
+    <Step>
+        <Name>SF-LogRequest</Name>
+    </Step>
+</SharedFlow>

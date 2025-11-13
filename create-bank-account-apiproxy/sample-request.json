@@ -1,0 +1,8 @@
+{
+    "accountType": "SAVINGS",
+    "customerName": "John Doe",
+    "customerId": "CUST123456",
+    "initialDeposit": 1000.00,
+    "currency": "USD",
+    "branchCode": "BR001"
+}

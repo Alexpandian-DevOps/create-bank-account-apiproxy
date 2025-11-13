@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Quota async="false" continueOnError="false" enabled="true" name="SF-Quota">
+    <DisplayName>Shared Flow - Quota Policy</DisplayName>
+    <Properties/>
+    <Allow count="1000" countRef="verifyapikey.SF-VerifyAPIKey.apiproduct.developer.quota.limit"/>
+    <Interval ref="verifyapikey.SF-VerifyAPIKey.apiproduct.developer.quota.interval">1</Interval>
+    <TimeUnit ref="verifyapikey.SF-VerifyAPIKey.apiproduct.developer.quota.timeunit">month</TimeUnit>
+    <Identifier ref="client_id"/>
+    <Distributed>true</Distributed>
+    <Synchronous>true</Synchronous>
+    <StartTime>2025-01-01 00:00:00</StartTime>
+</Quota>

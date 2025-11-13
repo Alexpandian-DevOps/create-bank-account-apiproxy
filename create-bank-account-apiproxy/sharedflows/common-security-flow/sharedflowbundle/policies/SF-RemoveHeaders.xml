@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="true" enabled="true" name="SF-RemoveHeaders">
+    <DisplayName>Shared Flow - Remove Sensitive Headers</DisplayName>
+    <Properties/>
+    <Remove>
+        <Headers>
+            <Header name="X-Powered-By"/>
+            <Header name="Server"/>
+            <Header name="X-AspNet-Version"/>
+            <Header name="X-AspNetMvc-Version"/>
+        </Headers>
+    </Remove>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>

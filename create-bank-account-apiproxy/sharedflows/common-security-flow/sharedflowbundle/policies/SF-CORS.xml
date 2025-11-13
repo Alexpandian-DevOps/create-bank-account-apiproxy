@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="true" enabled="true" name="SF-CORS">
+    <DisplayName>Shared Flow - CORS Headers</DisplayName>
+    <Properties/>
+    <Set>
+        <Headers>
+            <Header name="Access-Control-Allow-Origin">{kvm.config.cors_origin}</Header>
+            <Header name="Access-Control-Allow-Methods">GET, POST, PUT, DELETE, OPTIONS</Header>
+            <Header name="Access-Control-Allow-Headers">Content-Type, Authorization, x-api-key, x-request-id</Header>
+            <Header name="Access-Control-Max-Age">3600</Header>
+        </Headers>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>

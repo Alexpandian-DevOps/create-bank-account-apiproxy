@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="SF-GetKVMConfig" mapIdentifier="banking-api-config">
+    <DisplayName>Shared Flow - Get KVM Configuration</DisplayName>
+    <Properties/>
+    <ExclusiveCache>false</ExclusiveCache>
+    <ExpiryTimeInSecs>300</ExpiryTimeInSecs>
+    <Scope>environment</Scope>
+    <Get assignTo="kvm.config.api_key_enabled">
+        <Key>
+            <Parameter>api_key_enabled</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="kvm.config.quota_enabled">
+        <Key>
+            <Parameter>quota_enabled</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="kvm.config.rate_limit">
+        <Key>
+            <Parameter>rate_limit</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="kvm.config.timeout">
+        <Key>
+            <Parameter>backend_timeout</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="kvm.config.log_level">
+        <Key>
+            <Parameter>log_level</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="kvm.config.enable_cors">
+        <Key>
+            <Parameter>enable_cors</Parameter>
+        </Key>
+    </Get>
+</KeyValueMapOperations>

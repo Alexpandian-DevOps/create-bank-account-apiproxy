@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlowBundle revision="1" name="common-security-flow">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1699704000000</CreatedAt>
+    <CreatedBy>developer</CreatedBy>
+    <Description>Common security and validation shared flow for all banking APIs</Description>
+    <DisplayName>Common Security Flow</DisplayName>
+    <LastModifiedAt>1699704000000</LastModifiedAt>
+    <LastModifiedBy>developer</LastModifiedBy>
+    <Policies>
+        <Policy>SF-VerifyAPIKey</Policy>
+        <Policy>SF-JSONThreatProtection</Policy>
+        <Policy>SF-SpikeArrest</Policy>
+        <Policy>SF-Quota</Policy>
+        <Policy>SF-GetKVMConfig</Policy>
+        <Policy>SF-CORS</Policy>
+        <Policy>SF-RemoveHeaders</Policy>
+        <Policy>SF-LogRequest</Policy>
+    </Policies>
+    <SharedFlows>
+        <SharedFlow>default</SharedFlow>
+    </SharedFlows>
+    <Resources/>
+</SharedFlowBundle>

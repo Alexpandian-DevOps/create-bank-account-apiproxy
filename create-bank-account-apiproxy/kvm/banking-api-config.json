@@ -1,0 +1,46 @@
+{
+  "name": "banking-api-config",
+  "encrypted": false,
+  "entry": [
+    {
+      "name": "api_key_enabled",
+      "value": "true"
+    },
+    {
+      "name": "quota_enabled",
+      "value": "true"
+    },
+    {
+      "name": "rate_limit",
+      "value": "100"
+    },
+    {
+      "name": "backend_timeout",
+      "value": "30000"
+    },
+    {
+      "name": "log_level",
+      "value": "INFO"
+    },
+    {
+      "name": "enable_cors",
+      "value": "true"
+    },
+    {
+      "name": "cors_origin",
+      "value": "*"
+    },
+    {
+      "name": "max_request_size",
+      "value": "1048576"
+    },
+    {
+      "name": "enable_caching",
+      "value": "false"
+    },
+    {
+      "name": "cache_ttl",
+      "value": "300"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+    "info": {
+        "name": "Create Bank Account API - Mock Testing",
+        "description": "API proxy for creating bank accounts with mock responses (no backend required)",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create SAVINGS Account",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "x-api-key",
+                        "value": "{{api_key}}",
+                        "type": "text",
+                        "description": "API Key (can be disabled for testing)"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"accountType\": \"SAVINGS\",\n    \"customerName\": \"John Doe\",\n    \"customerId\": \"CUST123456\",\n    \"initialDeposit\": 1000.00,\n    \"currency\": \"USD\",\n    \"branchCode\": \"BR001\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{base_url}}/v1/banking/accounts",
+                    "host": ["{{base_url}}"],
+                    "path": ["v1", "banking", "accounts"]
+                },
+                "description": "Create a new SAVINGS account with initial deposit"
+            },
+            "response": []
+        },
+        {
+            "name": "Create CHECKING Account",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "x-api-key",
+                        "value": "{{api_key}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"accountType\": \"CHECKING\",\n    \"customerName\": \"Alice Smith\",\n    \"customerId\": \"CUST789012\",\n    \"initialDeposit\": 2500.00,\n    \"currency\": \"EUR\",\n    \"branchCode\": \"BR002\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{base_url}}/v1/banking/accounts",
+                    "host": ["{{base_url}}"],
+                    "path": ["v1", "banking", "accounts"]
+                },
+                "description": "Create a new CHECKING account"
+            },
+            "response": []
+        },
+        {
+            "name": "Create BUSINESS Account",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "x-api-key",
+                        "value": "{{api_key}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"accountType\": \"BUSINESS\",\n    \"customerName\": \"Tech Startup Inc\",\n    \"customerId\": \"CUST345678\",\n    \"initialDeposit\": 50000.00,\n    \"currency\": \"USD\",\n    \"branchCode\": \"BR003\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{base_url}}/v1/banking/accounts",
+                    "host": ["{{base_url}}"],
+                    "path": ["v1", "banking", "accounts"]
+                },
+                "description": "Create a new BUSINESS account"
+            },
+            "response": []
+        },
+        {
+            "name": "Invalid - Missing Fields",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "x-api-key",
+                        "value": "{{api_key}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"accountType\": \"SAVINGS\",\n    \"customerName\": \"Incomplete Request\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{base_url}}/v1/banking/accounts",
+                    "host": ["{{base_url}}"],
+                    "path": ["v1", "banking", "accounts"]
+                },
+                "description": "Test error handling - missing required fields"
+            },
+            "response": []
+        },
+        {
+            "name": "Invalid - Wrong Method (GET)",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "x-api-key",
+                        "value": "{{api_key}}",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "{{base_url}}/v1/banking/accounts",
+                    "host": ["{{base_url}}"],
+                    "path": ["v1", "banking", "accounts"]
+                },
+                "description": "Test error handling - wrong HTTP method"
+            },
+            "response": []
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "https://your-apigee-domain.apigee.net",
+            "type": "string"
+        },
+        {
+            "key": "api_key",
+            "value": "your-api-key-here",
+            "type": "string"
+        }
+    ]
+}
